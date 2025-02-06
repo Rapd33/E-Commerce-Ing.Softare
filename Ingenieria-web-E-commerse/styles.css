@@ -1,0 +1,112 @@
+:root {
+    --clr-main: #4278F5;
+    --clr-main-dark: #413ee4b2;
+    --clr-main-light: #78C5F5;
+    --clr-white: #ececec;
+    --clr-gray: #e2e2e2;
+    --clr-red: #961818;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tahoma', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6, p, a, input, textarea {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+}
+.wrapper {
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    background-color: var(--clr-main);
+}
+aside {
+    padding: 2rem;
+    padding-right: 0;
+    color: var(--clr-white);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu-list {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    color: var(--clr-gray)
+}
+.footer {
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 2rem;
+    color: var(--clr-main-dark);
+}
+main {
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--clr-white);
+    margin-left: 0;
+    margin: 2rem;
+}
+.productos-main {
+    display: grid inline-block;
+    grid-template-columns: repeat(4, 2fr);
+    display: inline-block;
+    gap: 1rem;
+    padding: 2rem;
+    align-items: auto;
+}
+.producto-img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 1rem;
+    margin-top: 1rem;
+}
+.producto-info {
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    padding: .5rem;
+    border-radius: 1rem;
+    margin-top: -2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+.botton-agregar-carro {
+    display: flex;
+    border: 2px solid var(--clr-white);
+    margin: 0.5rem 0;
+    padding: 0.4rem 1rem;
+    border-radius: 1rem;
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.botton-agregar-carro:hover {
+    background-color: var(--clr-main-dark);
+    color: var(--clr-white);
+}
