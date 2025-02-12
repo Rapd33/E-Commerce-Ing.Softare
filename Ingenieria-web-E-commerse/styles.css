@@ -1,6 +1,6 @@
 :root {
-    --clr-main: #4278F5;
-    --clr-main-dark: #413ee4b2;
+    --clr-main: #3260cc;
+    --clr-main-dark: #2321a7f8;
     --clr-main-light: #78C5F5;
     --clr-white: #ececec;
     --clr-gray: #e2e2e2;
@@ -26,10 +26,17 @@ a {
     text-decoration: none;
 }
 .icon-vela {
-    width: 1.1em;
-    height: 1.1em;
+    width: 1.2rem;
+    height: 1.2rem;
     vertical-align: -0.125em;
     fill: currentColor;
+    filter: brightness(0) saturate(100%) invert(100%);
+}
+h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--clr-main);
 }
 .wrapper {
     display: grid;
@@ -52,13 +59,68 @@ aside {
     flex-direction: column;
     gap: .5rem;
 }
+.boton-menu {
+    background-color: transparent;
+    border: none;
+    color: var(--clr-white);
+    font-size: 1rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    font-weight: 500;
+}
+.boton-menu.active, .logo{
+    background-color: var(--clr-white);
+    color: var(--clr-main);
+    width: 100%;
+    border-radius: 1rem 0 0 1rem;
+    position: relative;
+}
+.boton-menu.active::before, .logo::before {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    bottom: 100%;
+    right: 0;
+    background-color: transparent;
+    border-bottom-right-radius: 1rem;
+    box-shadow: 0 1rem 0 var(--clr-white);
+}
+.boton-menu.active::after, .logo::after {
+    content: '';
+    position: absolute;
+    width: 1rem;
+    height: 2rem;
+    top: 100%;
+    right: 0;
+    background-color: transparent;
+    border-top-right-radius: 1rem;
+    box-shadow: 0 -1rem 0 var(--clr-white);
+}
+.boton-menu:hover {
+    color: var(--clr-main-light);
+}
+.boton-carro {
+    margin-top: 2rem;
+}
 .logo {
+    padding: 1rem;
+    margin-top: 1rem;
     font-size: 2rem;
     font-weight: 700;
     margin-bottom: 2rem;
-    color: var(--clr-gray)
+    color: var(--clr-main-dark);
 }
-.footer {
+.logo a:link, .logo a:visited, .logo a:active {
+    color: var(--clr-main-dark);
+}
+.logo a:hover {
+    color: var(--clr-main-light);
+}
+footer {
     font-size: 1rem;
     text-align: center;
     margin-top: 2rem;
@@ -68,8 +130,10 @@ main {
     padding: 1rem;
     border-radius: 1rem;
     background-color: var(--clr-white);
-    margin-left: 0;
-    margin: 2rem;
+    margin: 1rem 1rem 1rem 0;
+}
+.titulo-main{
+    color: var(--clr-main);
 }
 .productos-main {
     display: grid;
@@ -97,7 +161,7 @@ main {
     flex-direction: column;
     gap: .25rem;
 }
-.botton-agregar-carro {
+.boton-agregar-carro {
     display: flex;
     border: 2px solid var(--clr-white);
     margin: 0.5rem 0;
@@ -112,7 +176,114 @@ main {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
-.botton-agregar-carro:hover {
-    background-color: var(--clr-main-dark);
+.boton-agregar-carro:hover {
+    background-color: var(--clr-main);
     color: var(--clr-white);
+}
+
+/*  Carro */
+
+.carro{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.imagen-carro {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 1rem;
+}
+.carro-vacio {
+    display:none;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 2rem;
+    color: var(--clr-main);
+}
+.carro-productos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.carro-producto {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--clr-main);
+    border-radius: 1rem;
+    background-color: var(--clr-gray);
+    padding: 0.5rem;
+    padding-right: 0.5rem;
+}
+.carro-producto small {
+    font-size: small;
+}
+.boton-eliminar {
+    background-color: transparent;
+    color: var(--clr-red);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 1rem;
+    cursor: pointer;
+}
+.carro-acciones {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+}
+.boton-vaciar {
+    display: flex;
+    border: none;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: var(--clr-gray);
+    color: var(--clr-main);
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.boton-vaciar:hover {
+    background-color: var(--clr-red);
+    color: var(--clr-white);
+}
+.carro-acciones-izquierda {
+    display: flex;
+    justify-items: center;
+    gap: 1rem;
+    background-color: var(--clr-gray);
+    border-radius: 1rem;
+}
+.carro-acciones-total {
+    display: flex;
+    color: var(--clr-main);
+    text-align: center;
+    align-items: center;
+    padding-left: 1rem;
+    justify-content: space-between;
+    background-color: var(--clr-gray);
+    border-radius: 1rem;
+}
+.boton-comprar {
+    display: flex;
+    border: none;
+    height: 100%;
+    padding: 1rem 1rem 1rem 1rem;
+    border-radius: 0rem 1rem 1rem 0rem;
+    background-color: var(--clr-main);
+    color: var(--clr-white);
+    text-align: center;
+    text-transform: uppercase;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+.boton-comprar:hover {
+    background-color: var(--clr-main-light);
+    color: var(--clr-main);
 }
