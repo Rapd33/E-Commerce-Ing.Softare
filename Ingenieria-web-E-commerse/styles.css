@@ -25,12 +25,11 @@ ul {
 a {
     text-decoration: none;
 }
-.icon-vela {
+.vela-icon {
     width: 1.2rem;
     height: 1.2rem;
     vertical-align: -0.125em;
-    fill: currentColor;
-    filter: brightness(0) saturate(100%) invert(100%);
+    color: currentColor;
 }
 h2 {
     font-size: 1.5rem;
