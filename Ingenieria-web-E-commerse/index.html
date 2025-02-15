@@ -17,9 +17,10 @@
             </header>
             <nav class="menu">
                 <ul class="menu-list">
-                    <li><button class="boton-menu boton-categorias active"><i class="bi bi-house"></i> Inicio</button></li>
+                    <li><button id="todos-los-productos" class="boton-menu boton-categorias active"><i class="bi bi-house"></i> Inicio</button></li>
+                    <li><button id="bolsos" class="boton-menu boton-categorias"><i class="bi bi-bag"></i> Bolsos</button></li>
                     <!-- svg de vela --> 
-                    <li><button class="boton-menu boton-categorias"> <svg class="vela-icon" viewBox="0 0 299.416 299.416">
+                    <li><button id="velas" class="boton-menu boton-categorias"> <svg class="vela-icon" viewBox="0 0 299.416 299.416">
                         <g>
                           <path fill="currentColor" d="M220.537,107.712c-0.053-16.681-31.774-23.089-57.458-24.625c7.573-3.76,12.974-10.697,14.616-19.541
                           c3.495-18.853-15.357-56.24-22.877-61.906c-2.383-1.801-5.243-2.118-7.626-0.953c-1.165,0.583-3.866,2.436-3.866,6.884
@@ -35,9 +36,8 @@
                           C206.769,278.498,184.95,286.918,149.681,286.918z"/>
                         </g>
                       </svg> Velas</button></li>
-                      
-                    <li><button class="boton-menu boton-categorias"><i class="bi bi-bag"></i> Bolsos</button></li>
-                    <li><a class="boton-menu boton-carro" href="compras.html"><i class="bi bi-cart3"></i> Carrito <span> 0</span></a></li>
+                    <!-- Aqui se agregan los productos de la pagina -->
+                    <li><a class="boton-menu boton-carro" href="compras.html"><i class="bi bi-cart3"></i> Carrito <span id="numero-productos"> 0</span></a></li>
                 </ul>
             </nav>
             <footer class="footer">

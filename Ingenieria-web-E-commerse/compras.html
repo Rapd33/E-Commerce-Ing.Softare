@@ -28,65 +28,22 @@
         <main>
             <h2 class="titulo-main">Tu carro de compras</h2>
                 <div class="carro">
-                    <p class="carro-vacio">Tu carro de compras está vacío. <i class="bi bi-emoji-astonished"></i></i></p>
-                    <!--Aqui se van a agregar los productos que el usuario vaya agregando al carrito-->
-                    <div class="carro-productos">
+                    <p id="carro-vacio" class="carro-vacio">Tu carro de compras está vacío. <i class="bi bi-emoji-astonished"></i></i></p>
 
-                        <div class="carro-producto">
-                            <img class="imagen-carro" src="Img/Bolsos/bolso 1.jpg" alt="">
-                            <div class="carro-producto-titulo">
-                                <small>titulo</small>
-                                <h3>Bolso Maricielo</h3>
-                            </div>
-                            <div class="carro-producto-cantidad">
-                                <small>Cantidad</small>
-                                <p>1</p>
-                            </div>
-                            <div class="carro-producto-precio">
-                                <small>Precio</small>
-                                <p>90.000</p>
-                            </div>
-                            <div class="carro-producto-total">
-                                <small>Total</small>
-                                <p>90.000</p>
-                            </div>
-                            <button class="boton-eliminar"><i class="bi bi-trash2"></i> Eliminar</button>
-                        </div>
-                        <div class="carro-producto">
-                            <img class="imagen-carro" src="Img/Bolsos/bolso 2.jpg" alt="">
-                            <div class="carro-producto-titulo">
-                                <small>titulo</small>
-                                <h3>Bolso Terra</h3>
-                            </div>
-                            <div class="carro-producto-cantidad">
-                                <small>Cantidad</small>
-                                <p>2</p>
-                            </div>
-                            <div class="carro-producto-precio">
-                                <small>Precio</small>
-                                <p>90.000</p>
-                            </div>
-                            <div class="carro-producto-total">
-                                <small>Total</small>
-                                <p>180.000</p>
-                            </div>
-                            <button class="boton-eliminar"><i class="bi bi-trash2"></i> Eliminar</button>
-                        </div>
-                    
+                    <div id="carro-productos" class="carro-productos disabled">
+                        <!--Aqui se van a agregar los productos que el usuario vaya agregando al carrito-->
                     </div>
-                <!--No olvide cambiar esto por codigo de JavaScript-->
-
-                    <div class="carro-acciones">
+                    <div id="carro-acciones" class="carro-acciones disabled">
                         <div class="carro-acciones-derecha">
-                            <button class="boton-vaciar"><i class="bi bi-trash2"></i> Vaciar carro</button>
+                            <button id="boton-vaciar" class="boton-vaciar"><i class="bi bi-trash2"></i> Vaciar carro</button>
                         </div>
                         <div class="carro-acciones-izquierda">
                             <div class="carro-acciones-total">
                                 <p>Total:</p>
-                                <p id="total">270.000</p>
+                                <p id="total">0</p>
                             </div>
                             <div class="carro-acciones-comprar">
-                                <button class="boton-comprar"><i class="bi bi-cash"></i> Comprar</button>
+                                <button id="boton-comprar" class="boton-comprar"><i class="bi bi-cash"></i> Comprar</button>
                             </div>
                         </div>
                     </div>
@@ -95,5 +52,5 @@
         </main>
     </div>
 </body>
-<script src="app.js"></script>
+<script src="compras.js"></script>
 </html>
