@@ -227,7 +227,8 @@ function agregarAlCarro(e) {
         const index = productosCarro.findIndex(producto => producto.id === idProducto);
         productosCarro[index].cantidad++;
     }
-    else {
+    else 
+    {
         productoAgregar.cantidad = 1;
         productosCarro.push(productoAgregar);
     }
