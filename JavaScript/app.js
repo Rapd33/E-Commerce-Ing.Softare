@@ -4,7 +4,7 @@ const productos = [
     {
         id: "bolso-01",
         titulo: "Bolso Maricielo",
-        imagen: "./Img/Bolsos/bolso 1.jpg",
+        imagen: "./Img/Bolsos/bolso 1.WebP",
         descripcion: "Bolso azul con detalles en varios colores",
         categoria: {
             nombre: "Bolsos",
@@ -15,7 +15,7 @@ const productos = [
     {
         id: "bolso-02",
         titulo: "Bolso Terra",
-        imagen: "./Img/Bolsos/bolso 2.jpg",
+        imagen: "./Img/Bolsos/bolso 2.WebP",
         descripcion: "Bolso blanco con detalles en distintos colores",
         categoria: {
             nombre: "Bolsos",
@@ -26,7 +26,7 @@ const productos = [
     {
         id: "bolso-03",
         titulo: "Bolso Medi",
-        imagen: "./Img/Bolsos/bolso 3.jpg",
+        imagen: "./Img/Bolsos/bolso 3.WebP",
         descripcion: "Bolso blanco con detalles en azul y dorado",
         categoria: {
             nombre: "Bolsos",
@@ -37,7 +37,7 @@ const productos = [
     {
         id: "bolso-04",
         titulo: "Bolso playa",
-        imagen: "./Img/Bolsos/bolso 4.jpg",
+        imagen: "./Img/Bolsos/bolso 4.WebP",
         descripcion: "Bolso blanco con detalles en azul y dorado",
         categoria: {
             nombre: "Bolsos",
@@ -48,7 +48,7 @@ const productos = [
     {
         id: "bolso-05",
         titulo: "Bolso de mano 1",
-        imagen: "./Img/Bolsos/bolso 5.jpg",
+        imagen: "./Img/Bolsos/bolso 5.WebP",
         descripcion: "Bolso de varios colores con ornamentos de colores",
         categoria: {
             nombre: "Bolsos",
@@ -59,7 +59,7 @@ const productos = [
     {
         id: "bolso-06",
         titulo: "Bolso de mano 2",
-        imagen: "./Img/Bolsos/bolso 6.jpeg",
+        imagen: "./Img/Bolsos/bolso 6.WebP",
         descripcion: "Bolso de varios colores con ornamentos de colores",
         categoria: {
             nombre: "Bolsos",
@@ -73,7 +73,7 @@ const productos = [
     {
         id: "vela-01",
         titulo: "Vela 1",
-        imagen: "./Img/Velas/vela 1.jpg",
+        imagen: "./Img/Velas/vela 1.WebP",
         descripcion: "Vela",
         categoria: {
             nombre: "Velas",
@@ -84,7 +84,7 @@ const productos = [
     {
         id: "vela-02",
         titulo: "Vela 2",
-        imagen: "./Img/Velas/vela 2.jpg",
+        imagen: "./Img/Velas/vela 2.WebP",
         descripcion: "Vela",
         categoria: {
             nombre: "Velas",
@@ -95,7 +95,7 @@ const productos = [
     {
         id: "vela-03",
         titulo: "Vela 3",
-        imagen: "./Img/Velas/vela 3.jpg",
+        imagen: "./Img/Velas/vela 3.WebP",
         descripcion: "Vela",
         categoria: {
             nombre: "Velas",
@@ -107,7 +107,7 @@ const productos = [
         id: "vela-04",
         titulo: "Vela 4",
         descripcion: "Vela",
-        imagen: "./Img/Velas/vela 4.jpg",
+        imagen: "./Img/Velas/vela 4.WebP",
         descripcion: "Vela",
         categoria: {
             nombre: "Velas",
@@ -118,7 +118,7 @@ const productos = [
     {
         id: "vela-05",
         titulo: "Vela 5",
-        imagen: "./Img/Velas/vela 5.jpg",
+        imagen: "./Img/Velas/vela 5.WebP",
         descripcion: "Vela",
         categoria: {
             nombre: "Velas",
@@ -129,7 +129,7 @@ const productos = [
     {
         id: "vela-06",
         titulo: "Vela 6",
-        imagen: "./Img/Velas/vela 6.jpg",
+        imagen: "./Img/Velas/vela 6.WebP",
         descripcion: "Vela",
         categoria: {
             nombre: "Velas",
