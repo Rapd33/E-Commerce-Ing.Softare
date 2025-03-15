@@ -1,143 +1,11 @@
-// Producto de la tienda
-const productos = [
-    // Bolsos
-    {
-        id: "bolso-01",
-        titulo: "Bolso Maricielo",
-        imagen: "./Img/Bolsos/bolso 1.webp",
-        descripcion: "Bolso azul con detalles en varios colores",
-        categoria: {
-            nombre: "Bolsos",
-            id: "bolsos"
-        },
-        precio: 90000
-    },
-    {
-        id: "bolso-02",
-        titulo: "Bolso Terra",
-        imagen: "./Img/Bolsos/bolso 2.webp",
-        descripcion: "Bolso blanco con detalles en distintos colores",
-        categoria: {
-            nombre: "Bolsos",
-            id: "bolsos"
-        },
-        precio: 90000
-    },
-    {
-        id: "bolso-03",
-        titulo: "Bolso Medi",
-        imagen: "./Img/Bolsos/bolso 3.webp",
-        descripcion: "Bolso blanco con detalles en azul y dorado",
-        categoria: {
-            nombre: "Bolsos",
-            id: "bolsos"
-        },
-        precio: 85000
-    },
-    {
-        id: "bolso-04",
-        titulo: "Bolso playa",
-        imagen: "./Img/Bolsos/bolso 4.webp",
-        descripcion: "Bolso blanco con detalles en azul y dorado",
-        categoria: {
-            nombre: "Bolsos",
-            id: "bolsos"
-        },
-        precio: 85000
-    },
-    {
-        id: "bolso-05",
-        titulo: "Bolso de mano 1",
-        imagen: "./Img/Bolsos/bolso 5.webp",
-        descripcion: "Bolso de varios colores con ornamentos de colores",
-        categoria: {
-            nombre: "Bolsos",
-            id: "bolsos"
-        },
-        precio: 80000
-    },
-    {
-        id: "bolso-06",
-        titulo: "Bolso de mano 2",
-        imagen: "./Img/Bolsos/bolso 6.webp",
-        descripcion: "Bolso de varios colores con ornamentos de colores",
-        categoria: {
-            nombre: "Bolsos",
-            id: "bolsos"
-        },
-        precio: 80000
-    },
+let productos = []
 
-    // Velas
-
-    {
-        id: "vela-01",
-        titulo: "Vela 1",
-        imagen: "./Img/Velas/vela 1.webp",
-        descripcion: "Vela",
-        categoria: {
-            nombre: "Velas",
-            id: "velas"
-        },
-        precio: 50000
-    },
-    {
-        id: "vela-02",
-        titulo: "Vela 2",
-        imagen: "./Img/Velas/vela 2.webp",
-        descripcion: "Vela",
-        categoria: {
-            nombre: "Velas",
-            id: "velas"
-        },
-        precio: 45000
-    },
-    {
-        id: "vela-03",
-        titulo: "Vela 3",
-        imagen: "./Img/Velas/vela 3.webp",
-        descripcion: "Vela",
-        categoria: {
-            nombre: "Velas",
-            id: "velas"
-        },
-        precio: 55000
-    },
-    {
-        id: "vela-04",
-        titulo: "Vela 4",
-        descripcion: "Vela",
-        imagen: "./Img/Velas/vela 4.webp",
-        descripcion: "Vela",
-        categoria: {
-            nombre: "Velas",
-            id: "velas"
-        },
-        precio: 50000
-    },
-    {
-        id: "vela-05",
-        titulo: "Vela 5",
-        imagen: "./Img/Velas/vela 5.webp",
-        descripcion: "Vela",
-        categoria: {
-            nombre: "Velas",
-            id: "velas"
-        },
-        precio: 50000
-    },
-    {
-        id: "vela-06",
-        titulo: "Vela 6",
-        imagen: "./Img/Velas/vela 6.webp",
-        descripcion: "Vela",
-        categoria: {
-            nombre: "Velas",
-            id: "velas"
-        },
-        precio: 50000
-    },
-];
+fetch("./JavaScript/productos.json")
+    .then(response => response.json())
+    .then (data => {
+        productos = data;
+        cargarProductos(productos);
+    })
 
 const containerProductos = document.querySelector("#container-producto");
 const botonesCategorias = document.querySelectorAll(".boton-categorias");
@@ -219,6 +87,26 @@ else {
 
 // Funcion para agregar al carro
 function agregarAlCarro(e) {
+
+    Toastify({
+        text: "Producto agregado",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #2321a7f8, #3260cc)",
+          borderRadius: "2rem",
+          textTransform: "uppercase",
+          fontSize: ".75rem"
+        },
+        offset: {
+            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },
+        onClick: function(){} // Callback after click
+      }).showToast();
 
     const idProducto = e.currentTarget.id;
     const productoAgregar = productos.find(producto => producto.id === idProducto);

@@ -78,6 +78,27 @@ function actualizarEliminarCarro() {
 
 // Funcion para eliminar productos del carro
 function eliminarDelCarro(e) {
+
+    Toastify({
+        text: "Producto eliminado",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #2321a7f8, #3260cc)",
+          borderRadius: "2rem",
+          textTransform: "uppercase",
+          fontSize: ".75rem"
+        },
+        offset: {
+            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },
+        onClick: function(){} // Callback after click
+      }).showToast();
+
     let idBoton = e.currentTarget.id
     const index = productosCarro.findIndex(producto => producto.id === idBoton);
 
@@ -91,10 +112,30 @@ function eliminarDelCarro(e) {
 botonVaciarCarro.addEventListener("click", vaciarCarro);
 function vaciarCarro() {
 
-    productosCarro.length = 0;
-    localStorage.setItem("productosCarro", JSON.stringify(productosCarro));
-    cargarProductosCarro();
-    actualizarCantidadCarro();
+    Swal.fire({
+        title: "¿Quieres vaciar el carro?",
+        icon: "warning",
+        html: `Se van a borrar ${productosCarro.reduce((acc, producto) => acc + producto.cantidad, 0)} productos.`,
+        showCancelButton: true,
+        confirmButtonText: "Sí, vaciar",
+        cancelButtonText: "Cancelar",
+        confirmButtonColor: "#d33",
+        cancelButtonColor: "#3085d6"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            productosCarro.length = 0;
+            localStorage.setItem("productosCarro", JSON.stringify(productosCarro));
+            cargarProductosCarro();
+            actualizarCantidadCarro();
+            Swal.fire({
+                title: "Carro vacio",
+                text: "Se han eliminado todos los productos.",
+                icon: "success",
+                confirmButtonText: "OK",
+                confirmButtonColor: "#3085d6"
+            })
+        }
+      })
 
 }
 
@@ -109,7 +150,10 @@ botonFinalizarCompra.addEventListener("click", finalizarCompra);
 function finalizarCompra() {
 
     alert("Gracias por tu compra!");
-    vaciarCarro();
+    productosCarro.length = 0;
+    localStorage.setItem("productosCarro", JSON.stringify(productosCarro));
+    cargarProductosCarro();
+    actualizarCantidadCarro();
 
 }
 
@@ -135,6 +179,26 @@ function actualizarCantidadCarro() {
 // Funcion para sumar productos
 function sumarCantidad(e) {
 
+    Toastify({
+        text: "Unidad añadida",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #2321a7f8, #3260cc)",
+          borderRadius: "2rem",
+          textTransform: "uppercase",
+          fontSize: ".75rem"
+        },
+        offset: {
+            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },
+        onClick: function(){} // Callback after click
+      }).showToast();
+
     const idProducto = e.currentTarget.id;
     const producto = productosCarro.findIndex(producto => producto.id === idProducto);
 
@@ -153,6 +217,26 @@ function sumarCantidad(e) {
 
 // Funcion para restar productos
 function restarCantidad(e) {
+
+    Toastify({
+        text: "Unidad eliminada",
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #2321a7f8, #3260cc)",
+          borderRadius: "2rem",
+          textTransform: "uppercase",
+          fontSize: ".75rem"
+        },
+        offset: {
+            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },
+        onClick: function(){} // Callback after click
+      }).showToast();
 
     const idProducto = e.currentTarget.id;
     const producto = productosCarro.findIndex(producto => producto.id === idProducto);
@@ -174,13 +258,14 @@ function restarCantidad(e) {
 // Funcion para digitar la cantidad de productos
 function cambiarCantidad(e) {
 
+    
     const idProducto = e.currentTarget.id;
     const nuevaCantidad = parseInt(e.currentTarget.value);
     const producto = productosCarro.findIndex(producto => producto.id === idProducto);
-
+    
     if (nuevaCantidad > 0 && nuevaCantidad < 1000)
-    {
-        productosCarro[producto].cantidad = nuevaCantidad;
+        {
+            productosCarro[producto].cantidad = nuevaCantidad;
     }
     else if (nuevaCantidad === 0)
     {
@@ -191,6 +276,27 @@ function cambiarCantidad(e) {
         productosCarro[producto].cantidad;
     }
     cargarProductosCarro();
-
+    
     localStorage.setItem("productosCarro", JSON.stringify(productosCarro));
+
+    Toastify({
+        text: "Cantidad establecida a " + nuevaCantidad,
+        duration: 3000,
+        close: true,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {
+          background: "linear-gradient(to right, #2321a7f8, #3260cc)",
+          borderRadius: "2rem",
+          textTransform: "uppercase",
+          fontSize: ".75rem"
+        },
+        offset: {
+            x: '1.5rem', // horizontal axis - can be a number or a string indicating unity. eg: '2em'
+            y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
+          },
+        onClick: function(){} // Callback after click
+      }).showToast();
+
 }
