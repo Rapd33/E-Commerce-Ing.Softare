@@ -149,6 +149,11 @@ function actualizarTotalCarro() {
 botonFinalizarCompra.addEventListener("click", finalizarCompra);
 function finalizarCompra() {
 
+    if (localStorage.getItem("usuario") === null) {
+        mostrarPopup(); // Mostrar popup si no está logueado
+        return;
+    }
+
     alert("Gracias por tu compra!");
     productosCarro.length = 0;
     localStorage.setItem("productosCarro", JSON.stringify(productosCarro));

@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles.css"> 
 </head>
+
+
 <body>
     <div class="wrapper">
         <header class="header-mobile">
@@ -23,7 +25,7 @@
             </header>
             <nav class="menu">
                 <ul class="menu-list">
-                    <li><a id="boton-usuario" href="perfil.html" class="boton-menu boton-usuario"><i class="bi bi-person-circle"></i><span id="nombre-usuario" class="nombre-usuario">Mi perfil</span></a></li>
+                    <li><a id="boton-usuario" href="perfil.html" class="boton-menu boton-usuario"><i class="bi bi-person-circle"></i><span id="nombre-usuario" class="nombre-usuario">Iniciar Sesión</span></a></li>
                     <li><a class="boton-menu boton-inicio" href="index.html"><i class="bi bi-arrow-return-left"></i> Seguir comprando</a></li>
                     <li><a class="boton-menu boton-carro active" href="compras.html"><i class="bi bi-cart3"></i> Carrito</a></li>
                 </ul>
@@ -33,19 +35,22 @@
             </footer>
         </aside>
         <main>
+            <div>
+                <div id="popup-container" class="popup-container"></div>
+            </div>
             <h2 class="titulo-main">Tu carro de compras</h2>
-                <div class="carro">
-                    <p id="carro-vacio" class="carro-vacio">Tu carro de compras está vacío. <i class="bi bi-emoji-astonished"></i></i></p>
+            <div class="carro">
+                <p id="carro-vacio" class="carro-vacio">Tu carro de compras está vacío. <i class="bi bi-emoji-astonished"></i></i></p>
+                
+                <!--Aqui se van a agregar los productos que el usuario vaya agregando al carrito-->
+                <div id="carro-productos" class="carro-productos disabled"></div>
 
-                    <div id="carro-productos" class="carro-productos disabled">
-                        <!--Aqui se van a agregar los productos que el usuario vaya agregando al carrito-->
+                <div id="carro-acciones" class="carro-acciones disabled">
+                    <div class="carro-acciones-derecha">
+                        <button id="boton-vaciar" class="boton-vaciar"><i class="bi bi-trash2"></i> Vaciar carro</button>
                     </div>
-                    <div id="carro-acciones" class="carro-acciones disabled">
-                        <div class="carro-acciones-derecha">
-                            <button id="boton-vaciar" class="boton-vaciar"><i class="bi bi-trash2"></i> Vaciar carro</button>
-                        </div>
-                        <div class="carro-acciones-izquierda">
-                            <div class="carro-acciones-total">
+                    <div class="carro-acciones-izquierda">
+                        <div class="carro-acciones-total">
                                 <p>Total:</p>
                                 <p id="total">0</p>
                             </div>
@@ -56,12 +61,18 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Pop-up de Login/Registro-->
+            <div>
+                <div id="popup-container" class="popup-container disabled"></div>
+            </div>
+            
         </main>
     </div>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="JavaScript/compras.js"></script>
 <script src="JavaScript/perfil.js"></script>
+<script src="JavaScript/compras.js"></script>
 <script src="JavaScript/menu.js"></script>
 </html>
