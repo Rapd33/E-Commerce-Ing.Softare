@@ -12,20 +12,15 @@
 </head>
 <body>
     <div class="wrapper">
-        <header class="header-mobile">
-            <h1 class="logo-mobile"><a href="index.html">Tienda Online</a></h1>
-            <button class="open-menu" id="open-menu" title="Open Menu"><i class="bi bi-list"></i></button>
-        </header>
-        <aside class="sidebar"> 
+        <aside class="sidebar">
             <header class="header">
                 <h1 class="logo"><a href="index.html">Tienda Online</a></h1>
-                <button class="close-menu" id="close-menu" title="Close Menu"><i class="bi bi-x-lg"></i></button>
             </header>
             <nav class="menu">
                 <ul class="menu-list">
-                    <li><a id="boton-usuario" href="perfil.html" class="boton-menu boton-usuario active"><i class="bi bi-person-circle"></i><span id="nombre-usuario" class="nombre-usuario">Mi perfil</span></a></li>
-                    <li><a class="boton-menu boton-inicio" href="index.html"><i class="bi bi-arrow-return-left"></i> Seguir comprando</a></li>
-                    <li><a class="boton-menu boton-carro" href="compras.html"><i class="bi bi-cart3"></i> Carrito</a></li>
+                    <li><a href="perfil.html" class="boton-menu active"><i class="bi bi-person-circle"></i> Mi perfil</a></li>
+                    <li><a href="index.html" class="boton-menu"><i class="bi bi-arrow-return-left"></i> Seguir comprando</a></li>
+                    <li><a href="compras.html" class="boton-menu"><i class="bi bi-cart3"></i> Carrito</a></li>
                 </ul>
             </nav>
             <footer class="footer">
@@ -36,38 +31,26 @@
             <h2 class="titulo-main">Mi perfil</h2>
             <div class="usuario">
                 <div class="usuario-foto">
-                    <p for="input-foto" class="foto-perfil"><img id="foto-perfil" src="img/imagen_usuario.webp" alt="Foto de perfil"></p>
-                    <div class="subir-foto">
-                        <h3 for="input-foto" class="subir-foto">Subir foto de perfil</h3>
-                        <input type="file" id="input-foto" accept="image/*" class="subir-foto" title="Subir foto de perfil">
-                    </div>
+                    <label for="input-foto" class="foto-perfil">
+                        <img id="foto-perfil" src="img/imagen_usuario.webp" alt="Foto de perfil">
+                    </label>
+                    <input type="file" id="input-foto" accept="image/*" class="subir-foto" title="Subir foto de perfil">
                 </div>
                 <div class="usuario-datos-personales">
                     <h3>Información Personal</h3>
-                    <div>
-                        <p>Nombres <span><button>Modificar</button></span></p>
-                        <p>Apellidos <span><button>Modificar</button></span></p>
-                        <p>Documento de identificación <span><button>Modificar</button></span></p>
-                    </div>
+                    <div></div>
                 </div>
                 <div class="usuario-datos-cuenta">
                     <h3>Datos de la Cuenta</h3>
-                    <div>
-                        <p>Nombre de usuario <span><button>Modificar</button></span></p>
-                        <p>Contraseña <span><button>Modificar</button></span></p>
-                        <p>Correo <span><button>Modificar</button></span></p>
-                        <p>Celular <span><button>Modificar</button></span></p>
-                    </div>
+                    <div></div>
                 </div>
                 <div class="usuario-datos-direccion">
                     <h3>Direcciones</h3>
-                    <div><span><button>Modificar</button></span></div>
-                    <button>Añadir</button>
+                    <div></div>
                 </div>
                 <div class="usuario-datos-pago">
                     <h3>Métodos de Pago</h3>
-                    <div><button>Modificar</button></div>
-                    <button>Añadir</button>
+                    <div></div>
                 </div>
             </div>
         </main>

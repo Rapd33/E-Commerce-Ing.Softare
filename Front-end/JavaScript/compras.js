@@ -97,7 +97,7 @@ function eliminarDelCarro(e) {
             y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
           },
         onClick: function(){} // Callback after click
-      }).showToast();
+    }).showToast();
 
     let idBoton = e.currentTarget.id
     const index = productosCarro.findIndex(producto => producto.id === idBoton);
@@ -302,6 +302,6 @@ function cambiarCantidad(e) {
             y: '1.5rem' // vertical axis - can be a number or a string indicating unity. eg: '2em'
           },
         onClick: function(){} // Callback after click
-      }).showToast();
+    }).showToast();
 
 }
